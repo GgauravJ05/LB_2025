@@ -1,43 +1,43 @@
-// PS - Accept the number from the use and  display even or odd number
+/*
+Problem statement:accept the number from user and display whether its even number or not.
+step1 :    integer no, 
+step2: algorithm
+    START
+        accept integer from user and store into variabe No
+        check if No %2==0 THEN 
+            print "number is even"
+            otherwise print "number is odd"
+    STOP
+
+*/
 
 #include<stdio.h>
 #include<stdbool.h>
-/// @brief
-/// @brief /////////////// Function Name : checkEvenOrOdd
-/// @brief /////////////// Description   : Accept number and check whether it is even or odd
-/// @brief /////////////// Author Name   : Gaurav Makrand Jadhav (Employee ID : 103)
-/// @brief /////////////// Date          : 20th April 2025
-/// @param iNo
-/// @return bool
 
-bool ckeckEvenOrOdd(int number)
+bool chekEven(int number)
 {
-    if(number % 2 == 0)
+    if(number%2==0)
     {
-        return true; // number is even
-    }
-    else
-    {
-        return false; // number is odd
+        return true;
+    } else {
+        return false;
     }
 }
 
 int main()
 {
-    int iNo = 0;
-    bool bRet = false; // variable to store return value of function
-    printf("Enter number\n");
-    scanf("%d",&iNo); // accept number from user    
+    int iNo=0;
+    bool bRes=false;
 
-    bRet = ckeckEvenOrOdd(iNo); // function call to check even or odd number
-    
-    if(bRet == true) // check if number is even
+    printf("Enter the number \n");
+    scanf("%d",&iNo);
+
+    bRes = chekEven(iNo);
+    if(bRes==true)
     {
-        printf("%d is an even number\n",iNo); // display even number
-    }
-    else
-    {
-        printf("%d is an odd number\n",iNo); // display odd number
+        printf("%d is an even number\n",iNo);
+    } else {
+        printf("%d is an odd number\n",iNo);
     }
 
     return 0;

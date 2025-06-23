@@ -1,5 +1,4 @@
-// Problem Statement - Accept two integers and perform their addition
-
+//Problem statement: Accept twp intgers and perform the addition
 #include<stdio.h>
 int main()
 {
@@ -10,8 +9,9 @@ int main()
     scanf("%d",&iValue1);
     printf("Enter second number\n");
     scanf("%d",&iValue2);
-    
-    iAns = iValue1 + iValue2;
-    printf("Sum of %d and %d is %d\n",iValue1,iValue2,iAns);
+
+    iAns=iValue1+iValue2;
+    printf("Addition is: %d",iAns);
     return 0;
+
 }

@@ -1,31 +1,39 @@
-// Calculate the percentahe of students makrks
+// problem sttement: calculate the percentage of student marks
+/*
+step 1: obtainedmarks, totalmarks  --- float
+step 2: algorithm
+        START
+            accept obtained marks and store in variable obtainedmarks
+            accept total marks  tand store in variable totalmarks
+            calculate percentage using formulae:
+                percentage = (obtainedmarks/totalmarks)*100
+            display the percentage
+        STOP
+step 3 draw flowchart
+step4 write pseudocode
+step 5 : C program
+step 6 : write program
+*/
 
 #include<stdio.h>
-
 float calculatePercentage(int iMarks, int iTotal)
 {
-    float fPercentage = 0.0f;
-    fPercentage = ((float)iMarks / iTotal) * 100.0f; // calculate percentage
-    return fPercentage; // return percentage   
-}    
+    float fPercentage=0.0f;
+    fPercentage = ((float)iMarks/(float)iTotal)*100;
+    return fPercentage;
+}
 
 int main()
 {
-    int iMarks = 0;
-    int iTotal = 0;
-    float fAns = 0;
-    printf("Enter marks obtained by student\n");
-    scanf("%d",&iMarks); // accept marks from user
-    printf("Enter total marks\n");  
-    scanf("%d",&iTotal); // accept total marks from user
+    int iMarks=0;
+    int iTotal =0;
+    float fAns =0.0f;
+    printf("Enter the Obtained marks\n");
+    scanf("%d",&iMarks);
+    printf("Enetr the out of marks \n");
+    scanf("%d",&iTotal);
 
-    fAns = calculatePercentage(iMarks, iTotal); // function call to calculate percentage
-    printf("Percentage of student is : %.2f\n",fAns); // display percentage of student
-
-    return 0;
+    fAns=calculatePercentage(iMarks,iTotal);
+    printf("Your percentage is : %f",fAns);
 }
 
-//TestCase
-// Input : 500 200
-// Output : Percentage of student is : 250.00
-// Result : Fail

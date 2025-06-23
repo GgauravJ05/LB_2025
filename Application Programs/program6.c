@@ -1,35 +1,51 @@
-// PS - Accept the radius fromt user and calculate the area of circle 
+/* Problem statement: Accept the radius from user and calculate the area of circle
+//step 1 : understand the problem statement
+        // radius : float value
+        // use the formula : PI * R* R (Pi =3.14f)
+ step 2: write the algorithm:
+        START
+            Accept the radius from user and store it into variable radius
+            create the variable PI and store value 3.14f into it.
+            calculate the area using the formula as PI*radius*radius
+            display the area of circle .
+        STOP
+step 3: draw the flowchart
+step 4: write pseudocode
+    START
+        INPUT radius
+        DECLARE PI=3.14f
+        CALCULATE areaOfCircle= PI*raius*radius
+        OUTPUT areaOfCircle
+    END
+step 5: programming language : C
+step 6: write program
 
-/* Step 1 : Understanding the Problem Statement
-            Radiius : flaoat
-            formula = 3.14 * radius * radius
-            area = 3.14 * radius * radius
-*/           
-
+*/
 
 #include<stdio.h>
-/// @brief 
-/// @brief /////////////// Function Name : calculateArea
-/// @brief /////////////// Description   : Accept radius and calculate area of circle
-/// @brief /////////////// Author Name   : Gaurav Makrand Jadhav (Employee ID : 103)
-/// @brief /////////////// Date          : 13th April 2025
+/// @brief //
+//  Name: calculateArea
+//  description : this function calculates the area of circle
+//  author : shiv salunke (123456)
 /// @param radius 
-/// @return float/
+/// @return float//
 float calculateArea(float radius)
 {
-    auto float fAreaOfCurlcle = 0.0f; // variable to store area of circle
-    auto float PI = 3.14f; // constant value of PI
-    fAreaOfCurlcle = PI * radius * radius; // formula to calculate area of circle
-    return fAreaOfCurlcle; // return the calculated area
+    auto float fAreaOfCircle =0.0f;
+    auto float PI = 3.14f;
+    fAreaOfCircle = PI*radius*radius;
+    return fAreaOfCircle;
 }
 
 int main()
 {
-    auto float fRadius = 0.0f; // variable to store radius of circle
-    auto float fArea = 0.0f; // variable to store area of circle
-    printf("Enter radius of circle\n"); // prompt user to enter radius
-    scanf("%f",&fRadius); // accept radius from user
-    fArea = calculateArea(fRadius); // function call to calculate area of circle
-    printf("Area of circle with radius %.2f is %.2f\n",fRadius,fArea); // display area of circle
+    auto float radius =0.0f;
+    auto float fAns =0.0f;
+
+    printf("Enter the  radius \n");
+    scanf("%f",&radius);
+
+    fAns=calculateArea(radius);
+    printf("Area of circle is : %f",fAns);
     return 0;
 }
