@@ -5,9 +5,16 @@ typedef int BOOL;
 #define TRUE 1
 #define FALSE 0
 
-BOOL ChkGreater()
+BOOL ChkGreater(int iNo)
 {
-
+ if(iNo > 100)
+ {
+    return TRUE;
+ }
+ else
+ {
+    return FALSE;
+ }
 }
 
 int main()
@@ -15,11 +22,16 @@ int main()
     int iValue = 0;
     BOOL bRet = FALSE;
     printf("please enter number: \n");
-    scanf("%d", iValue);
-    bRet = ();
+    scanf("%d", &iValue);
+    
+    bRet = ChkGreater(iValue);
 
-    if()
+    if(iValue > 100)
     {
         printf("Greater");
     }
+    else{
+        printf("Smaller");
+    }
+    return 0;
 }
