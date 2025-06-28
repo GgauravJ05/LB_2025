@@ -24,4 +24,4 @@ int main()
     factRev(iValue);
     return 0;
 }
-
+// Time Complexity: O(n)

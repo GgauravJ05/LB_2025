@@ -10,3 +10,5 @@ int main()
     printf("Your name is: %s:", Name);
     return 0;
 }
+
+// Time Complexity: O(1) (Constant Time)
