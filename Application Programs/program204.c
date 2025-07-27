@@ -33,7 +33,23 @@ void InsertFirst(PPNODE Head, PPNODE Tail, int iNo)
 
 void InsertLast(PPNODE Head, PPNODE Tail, int iNo)
 {
+    PNODE newn = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));
+    newn -> data = iNo;
+    newn -> next = NULL;
+    newn -> previous = NULL;
 
+    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
+    {
+        *Head = newn;
+        *Tail = newn;
+    } else { // LL not empty
+        newn -> previous = *Tail;
+        (*Tail) -> next = newn;
+        *Tail = newn;
+    }
+    (*Tail) -> next = *Head;
+    (*Head) -> previous = *Tail;
 }
 
 void InsertAtLoc(PPNODE Head, PPNODE Tail, int iNo, int iLoc)

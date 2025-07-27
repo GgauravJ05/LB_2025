@@ -33,7 +33,23 @@ void InsertFirst(PPNODE Head, PPNODE Tail, int iNo)
 
 void InsertLast(PPNODE Head, PPNODE Tail, int iNo)
 {
+    PNODE newn = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));
+    newn -> data = iNo;
+    newn -> next = NULL;
+    newn -> previous = NULL;
 
+    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
+    {
+        *Head = newn;
+        *Tail = newn;
+    } else { // LL not empty
+        newn -> previous = *Tail;
+        (*Tail) -> next = newn;
+        *Tail = newn;
+    }
+    (*Tail) -> next = *Head;
+    (*Head) -> previous = *Tail;
 }
 
 void InsertAtLoc(PPNODE Head, PPNODE Tail, int iNo, int iLoc)
@@ -59,7 +75,15 @@ void DeleteAtLoc(PPNODE Head, PPNODE Tail, int iLoc)
 // CALL BY VALUE
 void Display(PNODE Head,  PNODE Tail)
 {
-
+    if(Head != NULL && Tail != NULL)
+    {
+        do
+        {
+            printf("| %d | <=> ", Head->data);
+            Head = Head -> next;
+        } while(Head != Tail -> next);
+        printf("First Node Address\n");
+    }
 }
 
 void Count(PNODE Head,  PNODE Tail)
@@ -71,5 +95,15 @@ int main()
 {
     PNODE First = NULL;
     PNODE Last = NULL;
+
+    InsertFirst(&First, &Last, 30);
+    InsertFirst(&First, &Last, 20);
+    InsertFirst(&First, &Last, 10);
+
+    InsertLast(&First, &Last, 40);
+    InsertLast(&First, &Last, 50);
+    InsertLast(&First, &Last, 60);
+
+    Display(First, Last);
     return 0;
 }
