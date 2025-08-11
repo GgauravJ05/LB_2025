@@ -9,7 +9,7 @@ This repository contains all my **Logic Building (LB)** — logically structured
 - [`Application_Programs/`](Application_Programs)  
   Core practice programs — includes standard algorithm implementations, logic-building exercises, and data structure fundamentals.
 
-- [`Assignments/`](Assignments)  
+- [`Assignment/`](Assignment)  
   Academic assignments categorized by language or topic — includes applied programming tasks across different units.
 
 ---
