@@ -6,7 +6,7 @@ This repository contains all my **Logic Building (LB)** — logically structured
 
 ## 📁 Folder Structure
 
-- [`Application_Programs/`](Application_Programs)  
+- [`Application Programs/`](Application Programs)  
   Core practice programs — includes standard algorithm implementations, logic-building exercises, and data structure fundamentals.
 
 - [`Assignment/`](Assignment)  
