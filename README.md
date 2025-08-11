@@ -1,6 +1,13 @@
 # LB_2025
 
-This repository contains all my **Logic Building (LB)** — logically structured and implemented in **C**, **C++** and **Java**.
+![Languages](https://img.shields.io/github/languages/count/JGaurav26/LB_2025?style=for-the-badge&color=0e75b6&label=Languages)  
+![Top Language](https://img.shields.io/github/languages/top/JGaurav26/LB_2025?style=for-the-badge&color=yellow)  
+![Repo Size](https://img.shields.io/github/repo-size/JGaurav26/LB_2025?style=for-the-badge&color=ff69b4)  
+![Last Commit](https://img.shields.io/github/last-commit/JGaurav26/LB_2025?style=for-the-badge&color=brightgreen)  
+![License](https://img.shields.io/github/license/JGaurav26/LB_2025?style=for-the-badge&color=orange)  
+
+> **Logic Building (LB)** — Structured problem-solving practice in **C**, **C++**, and **Java**.  
+> This repository focuses on strengthening programming fundamentals through logic-based challenges and structured exercises.
 
 ---
 
