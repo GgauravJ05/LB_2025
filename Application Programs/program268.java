@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class program265 {
+public class program268 {
     public static boolean checkBit(int iNo)
     {
-        int iMask =4;
+        int iMask =16448; //(7th bit = 64 + 15th bit =16384)
         int Result =0;
         Result = iNo & iMask;
         if(Result ==iMask)
@@ -21,13 +21,12 @@ public class program265 {
 
         if(checkBit(iNo))
         {
-            System.out.println("3rd bit is ON");
+            System.out.println("7th & 15th bit is ON");
         } else {
-            System.out.println("3rd bit is OFF");
+            System.out.println("7th & 15th is OFF");
         }
 
 //        boolean iRet = checkBit(iNo);
 //        if(iRet==true){}
     }
-
 }
