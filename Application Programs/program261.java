@@ -1,15 +1,18 @@
-import java.util.Scanner;
-
 public class program261 {
     /*
-    & Bitwise AND
-    | Bitwise OR
-    ^ Bitwise XOR
-    ~ Bitwise NOT
-    << Bitwise Left Shift
-    >> Bitwise RIght Shift
+        &   BITWise AND
+        |   Bitwise OR
+        ^   Bitwise XOR
+        ~   Bitwise NOT
+        <<  Bitwise Left shift
+        >>  Bitwise Right shift
 
-    Truth Table
-    A   B     A&B     A|B      A^B
+        truth table
+        A   B   A&B     A|B     A^B
+        0   0
+        0   1
+        1   0
+        1   1
+
     */
 }

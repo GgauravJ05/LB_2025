@@ -15,7 +15,6 @@ public static int countCapital(String str)
     return iCapCount;
 }
 
-
     public static void main(String[] args) {
         Scanner sObj = new Scanner(System.in);
         String str = null;
