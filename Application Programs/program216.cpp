@@ -1,38 +1,38 @@
 #include<iostream>
 using namespace std;
 
-typedef struct node 
+typedef struct node
 {
     int data;
     struct node * next;
-}NODE, *PNODE, **PPNODE;
+}NODE,*PNODE,**PPNODE;
 
 class SinglyLL
 {
     public:
-    PNODE First;
-    int Count;
+        PNODE first;
+        int Count;
 
-    SinglyLL()
-    {
-        First = NULL;
-        Count = 0;
-    }
+        SinglyLL()
+        {
+            first = NULL;
+            Count = 0;
+        }
 
-    void InsertFirst(int iNo);
-    void InsertLast(int iNo);
-    void InsertAtLoc(int iNo, int iLoc);
-
-    void DeleteFirst();
-    void DeleteLast();
-    void DeleteAtLoc(int iLoc);
-
-    void Display();
+        void InsertFirst(int iNO);
+        void InsertLast(int iNo);
+        void InsertAtLoc(int iNo, int iLoc);
+        void DeleteFirst();
+        void DeleteLast();
+        void DeleteAtLoc(int iLoc);
+        void Display();
 };
-
 int main()
 {
-    SinglyLL obj1;
-    obj1.InsertFirst(10);
+    SinglyLL obj;
+    obj.InsertFirst(10);
+    obj.InsertFirst(20);
+    obj.InsertFirst(30);
+    obj.Display();
     return 0;
 }

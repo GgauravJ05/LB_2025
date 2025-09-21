@@ -1,91 +1,63 @@
 #include<stdio.h>
 #include<stdlib.h>
-
 typedef struct node
 {
     int data;
     struct node *next;
-    struct node *previous;
-}NODE, *PNODE, **PPNODE;
+    struct node *prev;
+} NODE, *PNODE,**PPNODE;
 
-// CALL BY ADDRESS
+//call by address
 void InsertFirst(PPNODE Head, PPNODE Tail, int iNo)
 {
     PNODE newn = NULL;
-    newn = (PNODE)malloc(sizeof(NODE));
-    newn -> data = iNo;
-    newn -> next = NULL;
-    newn -> previous = NULL;
+    newn = (PNODE) malloc(sizeof(NODE));
+    newn -> data =iNo;
+    newn->next = NULL;
+    newn->prev = NULL;
 
-    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
+    if((*Head==NULL) && (*Tail ==NULL)) //LL is empty
     {
         *Head = newn;
-        *Tail = newn;
-    } else { // LL not empty
-        newn -> next = *Head;
-        (*Head) -> previous = newn;
-        (*Head) = newn;
+        *Tail =newn;
+    } else { //LL is notEmpty
+        newn->next = *Head;
+        (*Head)->prev = newn;
+        *Head = newn;
     }
-    
-    (*Tail) -> next = *Head;
-    (*Head) -> previous = *Tail;
+    (*Tail)->next =*Head;
+    (*Head)->prev =*Tail;
 }
+void InsertLast(PPNODE Head, PPNODE Tail, int iNo){
+   PNODE newn = NULL;
+    newn = (PNODE) malloc(sizeof(NODE));
+    newn -> data =iNo;
+    newn->next = NULL;
+    newn->prev = NULL;
 
-void InsertLast(PPNODE Head, PPNODE Tail, int iNo)
-{
-    PNODE newn = NULL;
-    newn = (PNODE)malloc(sizeof(NODE));
-    newn -> data = iNo;
-    newn -> next = NULL;
-    newn -> previous = NULL;
-
-    if((*Head == NULL) && (*Tail == NULL))  // LL is empty
+    if((*Head==NULL) && (*Tail ==NULL)) //LL is empty
     {
         *Head = newn;
-        *Tail = newn;
-    } else { // LL not empty
-        newn -> previous = *Tail;
-        (*Tail) -> next = newn;
-        *Tail = newn;
+        *Tail =newn;
+    } else { //LL is not empty
+        newn->prev = *Tail;
+        (*Tail)->next = newn;
+        *Tail = newn; 
     }
-    (*Tail) -> next = *Head;
-    (*Head) -> previous = *Tail;
+    (*Tail)->next =*Head;
+    (*Head)->prev =*Tail;
 }
-
-void InsertAtLoc(PPNODE Head, PPNODE Tail, int iNo, int iLoc)
-{
-
-}
-
-void DeleteFirst(PPNODE Head, PPNODE Tail)
-{
-
-}
-
-void DeleteLast(PPNODE Head, PPNODE Tail)
-{
-
-}
-
-void DeleteAtLoc(PPNODE Head, PPNODE Tail, int iLoc)
-{
-
-}
-
-// CALL BY VALUE
-void Display(PNODE Head,  PNODE Tail)
-{
-
-}
-
-void Count(PNODE Head,  PNODE Tail)
-{
-
-}
+void InsertAtLoc(PPNODE Head, PPNODE Tail, int iNo,int iLoc){}
+void DeleteFirst(PPNODE Head,PPNODE Tail){}
+void DeleteLast(PPNODE Head,PPNODE Tail){}
+void DeleteAtLoc(PPNODE Head,PPNODE Tail, int iLoc){}
+//call by value
+void display(PNODE Head,PNODE Tail){}
+void count(PNODE Head,PNODE Tail){}
 
 int main()
 {
-    PNODE First = NULL;
+    PNODE First =NULL;
     PNODE Last = NULL;
     return 0;
 }

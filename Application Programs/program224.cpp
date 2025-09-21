@@ -1,140 +1,121 @@
 #include<iostream>
 using namespace std;
-
-typedef struct node 
+typedef struct node
 {
     int data;
     struct node * next;
-}NODE, *PNODE, **PPNODE;
-
+} NODE,*PNODE,**PPNODE;
 class SinglyLL
 {
     private:
-    PNODE First;
-    int Count;
-
+        PNODE first;
+        int Count;
     public:
-    SinglyLL();
-
-    void InsertFirst(int iNo);
-
-    void InsertLast(int iNo);
-
-    void Display();
-
-    int GetCount(); // 👈 Public getter for private Count
-
-    void DeleteFirst();
-    void DeleteLast();
+        SinglyLL();
+        void InsertFirst(int iNo);
+        void InsertLast(int iNo);
+        void Display();
+        int getCount();
+        void DeleteFirst();
+        void DeleteLast();
 };
-
-/* 
-    ReturnValue ClassName :: FunctionName()
-    {
-        ---------
-        :: Scope Resolution Operator
-    }
+/*
+ReturnValue ClassName :: FunctionName()
+{ ------ }
+ :: Socpe Resolution Operator
 */
+SinglyLL :: SinglyLL()
+{
+    cout<<"Inside Constructor"<<endl;
+    first = NULL;
+    Count = 0;
+}
+void SinglyLL :: InsertFirst(int iNo)
+{
+    PNODE newn = NULL;
+    newn = new NODE;
+    newn->data = iNo;
+    newn->next = NULL;
 
-SinglyLL::SinglyLL()
+    if(first==NULL) //LL is Empty // count==0
     {
-        cout<<"Inside Constructor"<<endl;
-        First = NULL;
-        Count = 0;
+        first = newn;
+    } else {
+        newn->next=first;
+        first = newn;
     }
+    Count++;
+}
+void SinglyLL :: InsertLast(int iNo){
+    PNODE newn = NULL;
+    PNODE temp = first;
 
-    void SinglyLL :: InsertFirst(int iNo)
+    newn = new NODE;
+    newn->data=iNo;
+    newn->next=NULL;
+
+    if(first==NULL) //LL is Empty // count==0
     {
-        PNODE newn = NULL;
-        newn = new NODE;
-        newn->data = iNo;
-        newn->next = NULL;
-
-        if(First == NULL) // LL is empty --> count = 0
+        first = newn;
+    } else {
+        while(temp->next!=NULL)
         {
-            First = newn;
-        } else {
-            newn->next = First;
-            First = newn;
-        }
-        Count++;
-    }
-
-    void SinglyLL :: InsertLast(int iNo)
-    {
-        PNODE newn = NULL;
-        PNODE temp = First;
-
-        newn = new NODE;
-        newn->data = iNo;
-        newn->next = NULL;
-
-        if(First == NULL) // LL is empty --> count = 0
-        {
-            First = newn;
-        } else {
-            while(temp->next != NULL)
-            {
-                temp = temp->next;
-            }
-            temp->next = newn;
-        }
-        Count++;
-    }
-
-
-    void SinglyLL :: Display()
-    {
-        PNODE temp = First;
-        cout<<"Elements in the LINKED LIST are :: "<<endl;
-        while(temp != NULL)
-        {
-            cout<<"|"<<temp->data<<"| -> ";
             temp = temp->next;
         }
-        cout<<"NULL"<<endl;
+        temp->next = newn;
     }
-
-    int SinglyLL :: GetCount() // 👈 Public getter for private Count
+    Count++;
+}
+void SinglyLL :: Display() {
+    PNODE temp = first;
+    cout<<"Elements in the Linked List are :"<<endl;
+    while(temp!=NULL)//type1
     {
-        return Count;
+        cout<<"|"<<temp->data<<"| ->";
+        temp=temp->next;
     }
-
-    void SinglyLL :: DeleteFirst()
-    {
-        if(First == NULL) // LL is empty
+    cout<<"NULL"<<endl;
+}
+int SinglyLL :: getCount()
         {
-            return;
-        } else if(First->next == NULL) { // LL with single node
-            delete First;
-            First = NULL;
-        } else { // LL with multiple nodes
-            PNODE temp = First;
-            First = First->next;
-            delete temp;
+            return Count;
         }
-        Count--;
-    }
 
-    void SinglyLL :: DeleteLast()
+
+void SinglyLL :: DeleteFirst(){
+    if(first==NULL)//LL is Empty
     {
-        if(First == NULL) // LL is empty
-        {
-            return;
-        } else if(First->next == NULL) { // LL with single node
-            delete First;
-            First = NULL;
-        } else { // LL with multiple nodes
-            PNODE temp = First;
-            while(temp->next->next != NULL)
-            {
-                temp = temp->next;
-            }
-            delete temp->next;
-            temp->next = NULL;
-        }
-        Count--;
+        return;
+    } else if(first->next==NULL)//LL with single node
+    {
+     delete first;
+     first = NULL;   
+    } else { //LL with multiple nodes
+        PNODE temp = first;
+        first = first->next;
+        delete temp;
     }
+    Count--;
+}
+void SinglyLL :: DeleteLast(){
+     if(first==NULL)//LL is Empty
+    {
+        return;
+    } else if(first->next==NULL)//LL with single node
+    {
+        delete first;
+        first = NULL;
+    } else { //LL with multiple nodes
+        PNODE temp = first;
+        while(temp->next->next)
+        {
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = NULL;
+    }
+    Count--;
+}       
 
 int main()
 {
@@ -143,18 +124,15 @@ int main()
     obj.InsertFirst(20);
     obj.InsertFirst(30);
     obj.Display();
-    cout<<"Number of node in the Linked List are :: "<<obj.GetCount()<<endl;
-
+    cout<<"Number of nodes in the Linked List are :"<<obj.getCount()<<endl;
     obj.InsertLast(40);
     obj.InsertLast(50);
     obj.InsertLast(60);
     obj.Display();
-    cout<<"Number of node in the Linked List are :: "<<obj.GetCount()<<endl;
-    
+    cout<<"Number of nodes in the Linked List are :"<<obj.getCount()<<endl;
     obj.DeleteFirst();
     obj.DeleteLast();
     obj.Display();
-    cout<<"Number of node in the Linked List are :: "<<obj.GetCount()<<endl;
-    
+    cout<<"Number of nodes in the Linked List are :"<<obj.getCount()<<endl;
     return 0;
 }
