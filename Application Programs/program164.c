@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-// structure declaration
+//structure declaration
 struct node
 {
     int data;

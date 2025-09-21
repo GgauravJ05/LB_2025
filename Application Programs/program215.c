@@ -1,45 +1,43 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-typedef struct node 
+typedef struct node
 {
     int data;
     struct node * next;
-} NODE, *PNODE, **PPNODE;
+} NODE, *PNODE,**PPNODE;
 
-//void InsertLast(PPNODE Head, int iNo){}
-
-void Enqueue(PPNODE Head, int iNo)
+// void InsertLast(PPNODE Head,int iNo)
+void Enqueue(PPNODE Head,int iNo)
 {
-    PNODE newn = NULL;
-    PNODE temp = *Head;
-    newn = (PNODE)malloc(sizeof(NODE));
-    newn -> data = iNo;
-    newn -> next = NULL;
+    PNODE newn =  NULL;
+    PNODE temp =*Head;
+    newn = (PNODE) malloc(sizeof(NODE));
+    newn->data = iNo;
+    newn->next = NULL;
 
-    if(*Head == NULL) // LL is empty
+    if(*Head ==NULL)//LL is empty
     {
         *Head = newn;
-    } else{
-        while(temp->next != NULL)
+    } else {
+        while(temp->next!=NULL)
         {
-            temp = temp->next;
+            temp= temp->next;
         }
         temp->next = newn;
     }
 }
 
-// void DeleteFirst(PPNODE Head){}
-
+//void DeleteFirst(PPNODE Head)
 int Dequeue(PPNODE Head)
 {
-    int Value = 0;
+ int Value = 0;
     PNODE temp = *Head;
-    if(*Head ==  NULL)
+    if(*Head ==NULL)//Stack empty
     {
-        printf("❌ QUEUE is empty!\n");
-    } else{
-        Value = (*Head)-> data;
+        printf("Quee is Empty \n");
+    }
+    else {
+        Value = (*Head)->data;
         *Head = (*Head)->next;
         free(temp);
     }
@@ -48,32 +46,28 @@ int Dequeue(PPNODE Head)
 
 void display(PNODE Head)
 {
-    printf("ELEMENTS IN THE QUEUE ARE :: \n");
-
+    printf("Elements in Queue are :\n");
     while(Head!=NULL)
     {
-        printf("|%d| \t", Head->data);
+        printf("|%d|\t",Head->data);
         Head = Head->next;
-}
-printf("\n");
+    }
+    printf("\n");
 }
 
 int main()
 {
     PNODE First = NULL;
-    int deletediNo = 0;
-    Enqueue(&First, 10);
-    Enqueue(&First, 20);
-    Enqueue(&First, 30);
-    Enqueue(&First, 40);
-    Enqueue(&First, 50);
+    int deletedNo =0;
+    Enqueue(&First,10);
+    Enqueue(&First,20);
+    Enqueue(&First,30);
+    Enqueue(&First,40);
     display(First);
-
-    deletediNo = Dequeue(&First);
-    printf("number deleted from queue is :: %d \n", deletediNo);
-    deletediNo = Dequeue(&First);
-    printf("number deleted from queue is :: %d \n", deletediNo);
+    deletedNo = Dequeue(&First);
+    printf("number deleted from queue is : %d\n",deletedNo);
+    deletedNo = Dequeue(&First);
+    printf("number deleted from queue is : %d\n",deletedNo);
     display(First);
-
     return 0;
 }

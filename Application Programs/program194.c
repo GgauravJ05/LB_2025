@@ -4,107 +4,72 @@
 typedef struct node
 {
     int data;
-    struct node *next;
-} NODE,* PNODE,** PPNODE;
+    struct node  *next;
+} NODE,*PNODE,**PPNODE;
 
-void InsertFirst(PPNODE Head, PPNODE Tail, int iNo)
-{
+void InsertFirst(PPNODE Head,PPNODE Tail,int iNo){
     PNODE newn = NULL;
     newn = (PNODE)malloc(sizeof(NODE));
     newn->data = iNo;
     newn->next = NULL;
 
-    if ((*Head == NULL) && (*Tail == NULL)) // LL is empty
+    if((*Head ==NULL) && (*Tail==NULL))//LL is empty
     {
         *Head = newn;
         *Tail = newn;
-        (*Tail)->next = *Head; // Circular link
-    }
-    else
-    {
-        newn->next = *Head;
+        (*Tail)->next = *Head;
+    } else { //LL contains 1 node in it
+        newn->next=*Head;
         *Head = newn;
-        (*Tail)->next = *Head; // Maintain circular link
+        (*Tail)->next=*Head;
     }
-
 }
-
-void InsertLast(PPNODE Head, PPNODE Tail, int iNo)
-{
+void InsertLast(PPNODE Head,PPNODE Tail,int iNo){
     PNODE newn = NULL;
     newn = (PNODE)malloc(sizeof(NODE));
     newn->data = iNo;
     newn->next = NULL;
 
-    if ((*Head == NULL) && (*Tail == NULL)) // LL is empty
+    if((*Head ==NULL) && (*Tail==NULL))//LL is empty
     {
         *Head = newn;
         *Tail = newn;
-        (*Tail)->next = *Head; // Circular link
-    }
-    else
-    {
+        (*Tail)->next = *Head;
+    } else { //LL contains single node in it
         (*Tail)->next = newn;
-         *Tail = newn;
-        (*Tail)->next = *Head; // Maintain circular link
+        *Tail = newn;   
+        (*Tail)->next = *Head;// compulsory add this statement
     }
 }
+void InsertAtLoc(PPNODE Head,PPNODE Tail, int iNo, int iLoc){}
 
-void InsertAtLoc(PPNODE Head,int iNo, int iLoc)
+void DeleteFirst(PPNODE Head,PPNODE Tail){}
+void DeleteLast(PPNODE Head,PPNODE Tail){}
+void DeleteAtLoc(PPNODE Head,PPNODE Tail,int iLoc){}
+
+void display(PNODE Head,PNODE Tail) {
+printf("Elements in the linkedlist are :\n");
+if((Head!=NULL) && (Tail!=NULL))
 {
-
-}
-
-void DeleteFirst(PPNODE Head)
-{
-
-}
-
-void DeleteLast(PPNODE Head)
-{
-
-}
-
-void DeleteAtLoc(PPNODE Head, int iLoc)
-{
-
-}
-
-void display(PNODE Head, PNODE Tail)
-{
-    printf("Elements in the Linked List are: ");
-    if ((Head != NULL) && (Tail != NULL))
+    do
     {
-        do
-        {
-            printf("| %d | -> ", Head->data);
-            Head = Head->next;
-        } while (Head != Tail->next);
-        printf("First node Address\n");
-    }
-    else
-    {
-        printf("List is empty.\n");
-    }
+        printf("| %d | ->",Head->data);
+        Head = Head->next;
+    } while (Head!=Tail->next);
+    printf("First Node Address\n");
 }
-
-int count(PNODE Head)
-{
-    return 0;
 }
+int count (PNODE Head,PPNODE Tail){return 0;}
 
 int main()
 {
     PNODE First = NULL;
-    PNODE Last = NULL; //#
-
-    InsertFirst(&First, &Last, 10);
-    InsertFirst(&First, &Last, 20);
-    InsertFirst(&First, &Last, 30);
-
-    InsertFirst(&First, &Last, 40);
-    InsertFirst(&First, &Last, 50);
-
-    display(First, Last);
+    PNODE Last = NULL; // #
+    InsertFirst(&First,&Last,10);
+    InsertFirst(&First,&Last,20);
+    InsertFirst(&First,&Last,30);
+    InsertLast(&First,&Last,40);
+    InsertLast(&First,&Last,50);
+    display(First,Last);
     return 0;
 }
