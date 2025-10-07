@@ -1,25 +1,38 @@
+public class program389 {
+    public static void main(String[] args) {
+        B bobj = new B(10);
+        bobj.show();
+        bobj.display();
+    }
+
+}
 class A
 {
-    int iNo;
+    int ino;
     A(){}
     A(int no)
     {
-        iNo = no;
+        ino = no;
     }
     public void display()
     {
-        System.out.println("In class A display value in iNo is :: " +iNo);
+        System.out.println("in Class A display value in ino is:" + ino);
     }
 }
 
-class B extends A
-{
+class B extends A {
     int bno;
     B(){super();}
-    B(int no){
+
+    B(int no)
+    {
+        super(no);
         bno = no;
     }
+    public void show()
+    {
+        System.out.println("value of bno is: "+bno);
+    }
+
 }
 
-public class program389 {
-}

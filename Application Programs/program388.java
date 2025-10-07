@@ -1,62 +1,72 @@
 import java.util.Scanner;
+public class program388 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int irow=0, icol =0;
+        System.out.println("Enter number of rows:");
+        irow=scanner.nextInt();
 
-class Matrix {
+        System.out.println("Enter the number of columns:");
+        icol = scanner.nextInt();
+
+        Matrix mobj = new Matrix(irow,icol);
+        mobj.accept();
+        mobj.display();
+        int sum = mobj.summation();
+        System.out.println("Addition of matrix elements is :" + sum);
+    }
+}
+class Matrix
+{
     public int Arr[][];
-    public int irow, icol;
-
-    public Matrix(int irow, int icol) {
-        this.irow = irow;
-        this.icol = icol;
+    public Matrix(int irow, int icol)
+    {
         Arr = new int[irow][icol];
     }
 
-    public void accept() {
+    public void accept()
+    {
+        int i=0,j=0;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the elements in the Matrix :: ");
-        for (int i = 0; i < irow; i++) {
-            for (int j = 0; j < icol; j++) {
+        System.out.println("Enter the elements in array:");
+        for(i=0;i<Arr.length;i++) //outer,row
+        {
+            for(j=0;j<Arr[i].length;j++)//inner col,
+            {
                 Arr[i][j] = scanner.nextInt();
             }
         }
     }
 
-    public int summation() {
-        int sum = 0;
-        for (int i = 0; i < irow; i++) {
-            for (int j = 0; j < icol; j++) {
-                sum += Arr[i][j];
-            }
-        }
-        return sum;
-    }
-
-    public void display() {
-        System.out.println("\nMatrix elements are: ");
-        for (int i = 0; i < irow; i++) {
-            for (int j = 0; j < icol; j++) {
-                System.out.print(Arr[i][j] + "\t");
+    public void display()
+    {
+        int i=0,j=0;
+        System.out.println("Matrix elements are:");
+        for(i=0;i<Arr.length;i++)
+        {
+            for(j=0;j<Arr[i].length;j++)
+            {
+                System.out.print(Arr[i][j] +"\t");
             }
             System.out.println();
         }
     }
-}
+    public int summation()
+    {
+        int i=0,j=0;
+        int isum =0;
 
-public class program388 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter number of rows: ");
-        int row = sc.nextInt();
-
-        System.out.print("Enter number of columns: ");
-        int col = sc.nextInt();
-
-        Matrix m = new Matrix(row, col);
-
-        m.accept();
-        m.display();
-
-        int result = m.summation();
-        System.out.println("\nSummation of all elements = " + result);
+        for(i=0;i<Arr.length;i++)
+        {
+            for(j=0;j<Arr[i].length;j++)
+            {
+                isum = isum + Arr[i][j];
+            }
+        }
+        return isum;
     }
 }
+
+
+
+
