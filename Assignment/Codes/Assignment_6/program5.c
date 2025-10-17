@@ -1,3 +1,10 @@
+/*
+    Problem Statement: Write a program which accepts number from user and print 
+    its first 5 multiples.
+    Input: 4
+    Output: 4 8 12 16 20
+*/
+
 #include<stdio.h>
 
 void MulDisplay(int iNo)
