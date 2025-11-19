@@ -49,7 +49,7 @@ void InsertLast(PPNODE Head, PPNODE Tail, int iNo){
 }
 
 void DeleteFirst(PPNODE Head,PPNODE Tail) {
-    if ((*Head ==NULL) && (*Tail =NULL)) //LL is Empty
+    if ((*Head ==NULL) && (*Tail == NULL)) //LL is Empty
     {
         return;
     } else if (*Head ==*Tail)//LL with single node
@@ -67,7 +67,7 @@ void DeleteFirst(PPNODE Head,PPNODE Tail) {
     
 }
 void DeleteLast(PPNODE Head,PPNODE Tail){
-     if ((*Head ==NULL) && (*Tail =NULL)) //LL is Empty
+     if ((*Head ==NULL) && (*Tail == NULL)) //LL is Empty
     {
         return;
     } else if (*Head ==*Tail)//LL with single node
@@ -195,3 +195,4 @@ int main()
     printf("\nLL contains %d nodes\n", iRet);
     return 0;
 }
+
