@@ -1,0 +1,51 @@
+/*
+   Problem:
+   Accept number of rows and columns from the user and display the following pattern.
+
+   Input:  iRow = 5,  iCol = 5
+
+   Output:
+   $  *  *  *  *
+   *  $  *  *  *
+   #  *  $  *  *
+   #  #  *  $  *
+   #  #  #  #  $
+   
+   Rules:
+   - If row == col → print '$'
+   - If row > col  → print '#'
+   - If row < col  → print '*'
+*/
+
+#include <stdio.h>
+
+void printPattern(int iRow, int iCol)
+{
+    int i, j;
+
+    for(i = 1; i <= iRow; i++)
+    {
+        for(j = 1; j <= iCol; j++)
+        {
+            if(i == j)
+                printf("$ ");
+            else if(i > j)
+                printf("# ");
+            else
+                printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int iRow = 0, iCol = 0;
+
+    printf("Enter number of rows and columns\n");
+    scanf("%d %d", &iRow, &iCol);
+
+    printPattern(iRow, iCol);
+
+    return 0;
+}
